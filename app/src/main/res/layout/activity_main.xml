@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp">
+    tools:layout_editor_absoluteY="25dp"
+    android:padding="10dp">
 
 
     <Button
@@ -16,4 +17,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="65dp"
         android:text="Show toast" />
+
+    <EditText
+        android:id="@+id/userMessege"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter your message" />
+
+    <Button
+        android:id="@+id/sendMessageToOtherActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Send text to other activity" />
 </RelativeLayout>
