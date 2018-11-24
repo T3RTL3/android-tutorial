@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+        //explicit send
+
         sendMessageToOtherActivity.setOnClickListener {
             Toast.makeText(this,"Second button was clicked", Toast.LENGTH_SHORT).show()
 
@@ -27,7 +29,23 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, msgOfUserInput, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, SecondActivity::class.java)
+
+            intent.putExtra("user_message", msgOfUserInput)
+
             startActivity(intent)
+
+
+        }
+        //implicit activity
+        btnShareToOtherApps.setOnClickListener{
+            val intent = Intent()
+
+            val msgOfUserInput: String  = userMessege.text.toString()
+
+            intent.action= Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, msgOfUserInput)
+            intent.type="text/plain"
+            startActivity(Intent.createChooser(intent, "Share to: "))
         }
     }
 }
